@@ -1,47 +1,96 @@
+import useEmblaCarousel from 'embla-carousel-react'
 import Carrito from '../img/Carrito.png'
-import Casita  from '../img/Casita.png'
-import Escudo  from '../img/Escudo.png'
-import reloj   from '../img/reloj.png'
-import promocion1 from '../img/promocional1.png'
+import Casita from '../img/Casita.png'
+import Escudo from '../img/Escudo.png'
+import reloj from '../img/reloj.png'
+import promocion1 from '../img/promocional.png'
+import promocional2 from '../img/promcional2.png'
+import mama1 from '../img/mama1.jpeg'
+import mama2 from '../img/mama2.jpeg'
+import mama3 from '../img/mama3.jpeg'
+import mama4 from '../img/mama4.png'
+import mama5 from '../img/mama5.jpeg'
+import mama6 from '../img/mama6.jpeg'
+import mama7 from '../img/mama7.png'
+import mama8 from '../img/mama8.png'
+import mama9 from '../img/mama9.png'
+import carrsuel1 from '../img/carrusel1.png'
+import carrusel2 from '../img/carrusel2.png'
+import carrusel3 from '../img/carrusel3.png'
+import carrusel4 from '../img/carrusel4.png'
 
 const Cuerpo = () => {
-      return (
-        <main className="h-screen bg-[#F9FAFB] text-[#858B6F] text-6xl text-center mt-20 font-semibold  ">
-            <h1>Sobre LUNORA</h1>
-            <p className="text-2xl mt-5">Somos una tienda de ropa comprometida con ofrecerte las últimas tendencias en  <br />moda. Desde 2020, hemos vestido a miles de clientes con estilo y calidad.</p>
-            <div className="flex gap-1">
-            <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
-                    <img src={Casita} alt="Casita" />
-                   <h3 className='text-2xl font-bold mb-4'>Calidad Premium</h3>
-                    <p className="text-xl">Productos de alta calidad seleccionados cuidadosamente</p>                  
-            </section>
-            <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
-                    <img src={Carrito} alt="Carrito" />
-                   <h3 className='text-2xl font-bold mb-4'>Envío Gratis</h3>
-                    <p className="text-xl">En compras mayores a $50</p>                  
-            </section>
-            <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
-                    <img src={Escudo} alt="Escudo" />
-                   <h3 className='text-2xl font-bold mb-4'>Compra Segura</h3>
-                    <p className="text-xl">Protección en todas tus transacciones</p>                  
-            </section>
-            <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
-                    <img src={reloj} alt="reloj" />
-                   <h3 className='text-2xl font-bold mb-4'>Atención 24/7</h3>
-                    <p className="text-xl">Siempre disponibles para ayudarte</p>                  
-            </section>
-             </div>
-             <div className="flex gap-6">
-             <section className="w-120 h-120 mt-15 ml-18">
-                    <img src={promocion1} alt="" />
-             </section>
-             <section className="w-120 h-120 mt-15 ml-18 ">
-                    <img src={promocion1} alt="" />
-             </section>
-             </div>
-        </main>
+        const [emblaRef] = useEmblaCarousel()
+        return (
+                <main className="min-h-screen bg-[#F9FAFB] text-[#858B6F] text-6xl text-center mt-20 font-semibold  ">
+                        <h1>Sobre LUNORA</h1>
+                        <p className="text-2xl mt-5">Somos una tienda de ropa comprometida con ofrecerte las últimas tendencias en  <br />moda. Desde 2020, hemos vestido a miles de clientes con estilo y calidad.</p>
+                        <div className="flex gap-1">
+                                <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
+                                        <img src={Casita} alt="Casita" />
+                                        <h3 className='text-2xl font-bold mb-4'>Calidad Premium</h3>
+                                        <p className="text-xl">Productos de alta calidad seleccionados cuidadosamente</p>
+                                </section>
+                                <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
+                                        <img src={Carrito} alt="Carrito" />
+                                        <h3 className='text-2xl font-bold mb-4'>Envío Gratis</h3>
+                                        <p className="text-xl">En compras mayores a $50</p>
+                                </section>
+                                <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
+                                        <img src={Escudo} alt="Escudo" />
+                                        <h3 className='text-2xl font-bold mb-4'>Compra Segura</h3>
+                                        <p className="text-xl">Protección en todas tus transacciones</p>
+                                </section>
+                                <section className="w-72 bg-white rounded-xl shadow-lg p-6 mt-15 ml-18 hover:shadow-xl transition  ">
+                                        <img src={reloj} alt="reloj" />
+                                        <h3 className='text-2xl font-bold mb-4'>Atención 24/7</h3>
+                                        <p className="text-xl">Siempre disponibles para ayudarte</p>
+                                </section>
+                        </div>
+                        <div className="flex gap-6">
+                                <section className="w-160 h-160 mt-10 ml-18 block object-contain transition duration-400 hover:brightness-75  ">
+                                        <img src={promocion1} alt="" />
+                                </section>
+                                <section className="w-160 h-160 mt-10 ml-auto block object-contain -translate-x-19  transition duration-400 hover:brightness-75">
+                                        <img src={promocional2} alt="" />
+                                </section>
+                        </div>
+                        <section className="text-center relative -translate-y-95">
+                                <h1 className="font-serif text-5xl">El Estilo de Mamá ❀ ❤</h1>
+                                <div className="grid grid-cols-3 gap-1 pt-4 w-fit mx-auto justify-items-center">
+                                        <img className="transition duration-400 hover:brightness-75" src={mama1} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama2} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama3} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama4} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama6} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama5} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama7} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama8} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama9} alt="" />
+                                </div>
+                        </section>
+                        <section className="-translate-y-70">
+                                <h1 className="-translate-y-10 font-serif">Explora tu Conjunto ✦ </h1>
+                        <div className="overflow-hidden max-w-7xl mx-auto " ref={emblaRef}>
+                               <div className="flex gap-4 translate-x-10">
+                                   <div className="flex-[0_0_auto]">
+                                        <img  className="w-full h-100px object-cover" src={carrsuel1}/>
+                                        </div>
+                                    <div className="flex-[0_0_auto]  ">
+                                        <img  className="w-full h-100px object-cover" src={carrusel2}/>
+                                        </div>
+                                     <div className="flex-[0_0_auto]  ">
+                                        <img  className="w-full h-100px object-cover" src={carrusel3}/>
+                                        </div>
+                                     <div className="flex-[0_0_auto]  ">
+                                        <img  className="w-full h-100px object-cover" src={carrusel4}/>
+                                        </div>    
+                                </div>
+                        </div>
+                 </section>
+                </main>
 
-      )
+        )
 }
 
 export default Cuerpo
