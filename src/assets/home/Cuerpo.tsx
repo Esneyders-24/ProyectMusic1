@@ -18,6 +18,12 @@ import carrsuel1 from '../img/carrusel1.png'
 import carrusel2 from '../img/carrusel2.png'
 import carrusel3 from '../img/carrusel3.png'
 import carrusel4 from '../img/carrusel4.png'
+import bicicleta1 from '../img/bicicleta1.png'
+import bicicleta2 from '../img/bicicleta2.png'
+import bicicleta3 from '../img/bicicleta3.png'
+import bicicleta4 from '../img/bicicleta4.png'
+import bicicletarect1 from '../img/lunora_bicicletas_615x220.png'
+import bicicletarect2 from '../img/lunora_claro_615x220.png'
 
 const Cuerpo = () => {
         const [emblaRef] = useEmblaCarousel()
@@ -58,15 +64,15 @@ const Cuerpo = () => {
                         <section className="text-center relative -translate-y-95">
                                 <h1 className="font-serif text-5xl">El Estilo de Mamá ❀ ❤</h1>
                                 <div className="grid grid-cols-3 gap-1 pt-4 w-fit mx-auto justify-items-center">
-                                        <img className="transition duration-400 hover:brightness-75" src={mama1} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama2} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama3} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama4} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama6} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama5} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama7} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama8} alt="" />
-                                        <img className="transition duration-400 hover:brightness-75" src={mama9} alt="" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama1} alt="mama1" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama2} alt="mama2" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama3} alt="mama3" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama4} alt="mama4" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama6} alt="mama5" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama5} alt="mama6" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama7} alt="mama7" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama8} alt="mama8" />
+                                        <img className="transition duration-400 hover:brightness-75" src={mama9} alt="mama9" />
                                 </div>
                         </section>
                         <section className="-translate-y-70">
@@ -86,6 +92,19 @@ const Cuerpo = () => {
                                         <img  className="w-full h-100px object-cover" src={carrusel4}/>
                                         </div>    
                                 </div>
+                        </div>
+                 </section>
+                 <section className="-translate-y-60 ">
+                        <h1 className="font-serif">Tops de Bicicletas ×͜×</h1>
+                        <div className="grid grid-cols-4 gap-3 pt-8 w-fit mx-auto justify-items-center translate-5">
+                                        <img className="transition duration-400 hover:brightness-75" src={bicicleta1} alt="bicicleta1" />
+                                        <img className="transition duration-400 hover:brightness-75" src={bicicleta2} alt="bicicleta2" />
+                                        <img className="transition duration-400 hover:brightness-75" src={bicicleta3} alt="bicicleta3" />
+                                        <img className="transition duration-400 hover:brightness-75" src={bicicleta4} alt="bicicleta4" />
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 pt-8 w-fit mx-auto justify-items-center translate-5 ">
+                                        <img src={bicicletarect1} alt="" />
+                                        <img src={bicicletarect2} alt="" />
                         </div>
                  </section>
                 </main>
