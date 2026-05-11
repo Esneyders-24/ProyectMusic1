@@ -15,7 +15,7 @@ const MainNavbar = () => {
                 <li className="group relative cursor-pointer hover:text-yellow-500 transition">
                     PRODUCTOS <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
                 <ul className="hidden group-hover:block absolute bg-white text-black mt-2 rounded shadow p-2">
-                    <li className="p-2 hover:bg-gray-100  text-center">
+                    <li className="p-2 hover:bg-gray-100  text-center ">
                             TENDENCIAS Y COLECCIONES
                     </li>
                     <li className="p-2 hover:bg-gray-100 text-center">
