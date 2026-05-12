@@ -1,42 +1,15 @@
 import img2 from '../img/Simbolito (1).png'
 import img1 from '../img/img1tv.png'
 
-const Nav_Items = [
-    {
-        id: "inversiones",
-        etiqueta: "Inversiones",
-        titulo: "Inviterta con nosotros"
-    },
-
-    {
-        id: "Proveedores",
-        etiqueta: "Proveedores",
-        titulo: "Nuestros socios"
-    },
-
-    {
-        id: "empleados",
-        etiqueta: "Empleados",
-        titulo: "Nuestros colaboradores"
-    },
-
-    {
-        id: "Tienda",
-        etiqueta: "Tienda",
-        titulo: "Compre de todo"
-    },
-]
-
 
 const MainNavbar = () => {
     return (
-
         <nav className="flex justify-between items-center px-10 py-4 bg-[#858B6F] ">
             <h1 className="text-xl font-bold text-gray-800">
                 <img className="flex w-20 h-auto object-cover " src={img1} alt="" />
             </h1>
             <ul className="flex gap-20 text-white">
-                    <li    className="group relative cursor-pointer  hover:text-yellow-500 transition ">
+                    <li className="group relative cursor-pointer  hover:text-yellow-500 transition ">
                     HOME
                 </li>
              
