@@ -1,6 +1,33 @@
 import img2 from '../img/Simbolito (1).png'
 import img1 from '../img/img1tv.png'
 
+const Nav_Items = [
+    {
+        id: "inversiones",
+        etiqueta: "Inversiones",
+        titulo: "Inviterta con nosotros"
+    },
+
+    {
+        id: "Proveedores",
+        etiqueta: "Proveedores",
+        titulo: "Nuestros socios"
+    },
+
+    {
+        id: "empleados",
+        etiqueta: "Empleados",
+        titulo: "Nuestros colaboradores"
+    },
+
+    {
+        id: "Tienda",
+        etiqueta: "Tienda",
+        titulo: "Compre de todo"
+    },
+]
+
+
 const MainNavbar = () => {
     return (
 
@@ -9,9 +36,11 @@ const MainNavbar = () => {
                 <img className="flex w-20 h-auto object-cover " src={img1} alt="" />
             </h1>
             <ul className="flex gap-20 text-white">
-                <li className="group relative cursor-pointer  hover:text-yellow-500 transition ">
+                    <li    className="group relative cursor-pointer  hover:text-yellow-500 transition ">
                     HOME
                 </li>
+             
+
                 <li className="group relative cursor-pointer hover:text-yellow-500 transition">
                     PRODUCTOS <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
                 <ul className="hidden group-hover:block absolute bg-white text-black mt-2 rounded shadow p-2">
