@@ -1,10 +1,50 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+
 import './index.css'
 import App from './App.tsx'
 
+const vinculacion = createBrowserRouter([
+  {
+    path: "/", 
+    element: <App/>,
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+        return {Component: (await import('./assets/pages/inicio.tsx')).default}
+        }
+      },
+      {
+        path: "Tendencias",
+        lazy: async () => ({ Component: (await import('./assets/pages/tendenciasycolecciones.tsx')).default}
+      )
+      },
+      {
+        path: "Ropas",
+        lazy: async () => ({ Component: (await import('./assets/pages/Ropas.tsx')).default}
+      )
+    },
+    {
+        path: "Zapatos",
+        lazy: async () => ({ Component: (await import('./assets/pages/Zapatos.tsx')).default}
+      )
+    },
+    {
+        path: "Accesorios",
+        lazy: async () => ({ Component: (await import('./assets/pages/Accesorios.tsx')).default}
+      )
+    }
+
+    ]
+  }
+])
+
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router = {vinculacion} />
   </StrictMode>,
 )
