@@ -1,16 +1,24 @@
 import logofooter from '../img/img1tv.png'
-import instagram from '../img/instagram.png'
-import facebook from '../img/facebook.png'
-import X from '../img/X.png'
-import whtapp from '../img/Whtapp.png'
+import { faFacebook, faInstagram, faTiktok, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons/faWhatsapp'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = () => {
+
+const redesociales = [
+      {nombre: "X", Vinculo: "http://x.com", icono: faXTwitter},
+      {nombre: "Instagram", Vinculo: "http://instagram.com", icono: faInstagram},
+      {nombre: "Facebook", Vinculo:"http://facebook.com", icono: faFacebook },
+      {nombre: "Tik tok", Vinculo: "http://tiktok.com", icono: faTiktok},
+      {nombre: "Whatapps", Vinculo: "http://whatsapp.com", icono: faWhatsapp}
+]
+
   return (
     <footer className="bg-[#838B6F] text-white py-10 mt-10">
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 sm:flex-row items-center">
 
-        {/* Logo */}
+        
         <div>
           <h1 className="flex w-30 h-auto object-cover">
             <img src={logofooter} alt="" />
@@ -20,14 +28,20 @@ const Footer = () => {
             Encuentra el equilibrio perfecto entre sofisticación y adrenalina. Ropa de vestir, equipamiento deportivo y las mejores bicicletas en un solo lugar.
           </p>
 
-          <div className="grid grid-cols-4 gap-4 -pt-8 w-fit  justify-items-center translate-5">
-            <img className="flex- w-10 h-auto  object-cover -translate-x-5" src={instagram} alt="instagram" />
-            <img className="flex w-10 h-auto  object-cover -translate-x-5 " src={facebook} alt="facebook" />
-            <img className="flex w-10 h-auto  object-cover -translate-x-5 " src={X} alt="facebook" />
-            <img className="flex w-10 h-auto  object-cover -translate-x-5 " src={whtapp} alt="facebook" />
-          </div>
+            <div className='flex gap-4 mt-2 '>
+              {redesociales.map(irdsociales => (
+                   <a key={irdsociales.nombre} 
+                    href={irdsociales.Vinculo} target='_blank'
+                    className='hover:text-teal-300 items-center justify-center' >
+                       <FontAwesomeIcon
+                        icon={irdsociales.icono}
+                       />
+                    </a>
+            ))}
+            </div>
+
         </div>
-        <div className="flex gap-20">
+        <div className="flex gap-20 ">
           <div className=" flex flex-col gap-4 ">
             <h2 className=" text-2xl font-semibold mb-4 ">
               Categorias
@@ -53,7 +67,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className=" flex flex-col gap-4  ">
+          <div className=" flex flex-col gap-4 ">
             <h2 className=" text-2xl font-semibold mb-4  whitespace-nowrap">
               Ayuda al Cliente
             </h2>
