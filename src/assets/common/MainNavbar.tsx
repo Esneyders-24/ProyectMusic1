@@ -1,5 +1,51 @@
+import { NavLink } from 'react-router-dom'
 import img2 from '../img/Simbolito (1).png'
 import img1 from '../img/img1tv.png'
+
+const Nav_inicio = [
+    {
+        nombre: "Tendencias y colecciones",
+        ruta: "/Tendencias" 
+    }, 
+    {
+        nombre: "Ropas",
+        ruta: "/Ropas"
+    },
+    {
+        nombre:"Zapatos",
+        ruta: "/Zapatos"
+    },
+    {
+        nombre: "Accesorios",
+        ruta: "/Accesorios"
+    }, 
+
+    {
+        nombre: "Camiseta",
+        ruta: "/Camisetas"
+    },
+
+    {
+        nombre: "Accesorio Deportivo",
+        ruta:"/AccesorioDeportivo"
+    },
+
+    {
+        nombre:"Fitness",
+        ruta:"/Fitness"
+    },
+
+    {
+        nombre:"Bicicletas",
+        ruta:"Bicicletas"
+    },
+    {
+        nombre: "Promociones",
+        ruta:"Promciones"
+    }
+]
+
+
 
 const MainNavbar = () => {
 
@@ -10,24 +56,26 @@ const MainNavbar = () => {
             </h1>
             <ul className="flex gap-20 text-white"> 
                     <li className="group relative cursor-pointer  hover:text-yellow-500 transition ">
-                    HOME
+                        HOME 
                 </li>
              
 
                 <li className="group relative cursor-pointer hover:text-yellow-500 transition">
                     PRODUCTOS <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
-                <ul className="hidden group-hover:block absolute bg-white text-black mt-2 rounded shadow p-2">
-                    <li className="p-2 hover:bg-gray-100  text-center ">
-                            TENDENCIAS Y COLECCIONES
+                <ul className="hidden group-hover:block absolute bg-white text-black  top-full rounded-xl">
+                    
+                    <li  className="p-2  hover:bg-yellow-400 text-center rounded-xl"> 
+                            <NavLink to={Nav_inicio[0].ruta}>TENDENCIAS Y COLECCIONES </NavLink>
                     </li>
-                    <li className="p-2 hover:bg-gray-100 text-center">
-                            ROPAS
+                    
+                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
+                            <NavLink to={Nav_inicio[1].ruta}> ROPAS </NavLink>
                     </li>
-                    <li className="p-2 hover:bg-gray-100 text-center">
-                            ZAPATOS
+                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
+                            <NavLink to={Nav_inicio[2].ruta}>ZAPATOS </NavLink>
                     </li>
-                    <li className="p-2 hover:bg-gray-100 text-center">
-                            ACCESORIOS
+                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
+                            <NavLink to={Nav_inicio[3].ruta}>ACCESORIOS </NavLink>
                     </li>    
                     </ul>
 
@@ -35,18 +83,18 @@ const MainNavbar = () => {
                 </li>   
                  <li className="group relative cursor-pointer hover:text-yellow-500 transition">
                      DEPORTES Y AIRE LIBRE  <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
-                <ul className="hidden group-hover:block absolute bg-white text-black mt-2 rounded shadow p-9">
-                    <li className="p-2 hover:bg-gray-100">
-                            CAMISETAS
+                <ul className="hidden group-hover:block absolute bg-white text-black top-full rounded-xl ">
+                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
+                            <NavLink to={Nav_inicio[4].ruta}>CAMISETAS</NavLink>
                     </li>
-                    <li className="p-2 hover:bg-gray-100">
-                            ACCESOSRIOS DEPORTIVOS  
+                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl ">
+                            <NavLink to={Nav_inicio[5].ruta}>ACCESOSRIOS DEPORTIVOS</NavLink>  
                     </li>
-                    <li className="p-2 hover:bg-gray-100">
-                            FITNESS  
+                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl ">
+                            <NavLink to={Nav_inicio[6].ruta}>FITNESS</NavLink>  
                     </li>
-                    <li className="p-2 hover:bg-gray-100">
-                            BICICLETAS 
+                    <li className="p-2 hover:bg-yellow-400 text-center  rounded-xl ">
+                            <NavLink to={Nav_inicio[7].ruta}>BICICLETAS</NavLink> 
                     </li>
 
                     </ul>
@@ -54,14 +102,10 @@ const MainNavbar = () => {
 
                 <li className="group relative cursor-pointer  hover:text-yellow-500 transition">
                      OFERTAS <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
-                <ul className="hidden group-hover:block absolute bg-white text-black mt-2 rounded shadow p-2">
-                    <li className="p-2 hover:bg-gray-100">
-                            PROMOCIONES
+                <ul className="hidden group-hover:block absolute bg-white text-black top-full rounded-xl ">
+                    <li className="p-2 hover:bg-yellow-400 rounded-xl">
+                            <NavLink to={Nav_inicio[8].ruta}>PROMOCIONES</NavLink>
                     </li>
-                       <li className="p-2 hover:bg-gray-100">
-                            
-                        </li>
-
                     </ul>
                 </li> 
 
