@@ -1,20 +1,17 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import MainNavbar from './assets/common/MainNavbar'
-import Mainhero from './assets/common/Mainhero'
-import Cuerpo from './assets/home/Cuerpo'
-import Novedades from './assets/home/Novedades'
 import Footer from './assets/home/footer'
-import Ranking from './assets/home/ranking'
+
 
 const App = () => {
 
   return (
     <>
       <MainNavbar/>
-      <Mainhero/>
-      <Cuerpo/>
-      <Novedades/>
-      <Ranking/>
+      <main className='animate-in fade-in duration-500'>
+      <Outlet/>
+      </main>
       <Footer/>
 
     </>
