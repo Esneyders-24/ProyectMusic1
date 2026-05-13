@@ -36,6 +36,32 @@ const vinculacion = createBrowserRouter([
         path: "Accesorios",
         lazy: async () => ({ Component: (await import('./assets/pages/Accesorios.tsx')).default}
       )
+    },
+    {
+      path: "Camisetas",
+        lazy: async () => ({ Component: (await import('./assets/pages/camisetas.tsx')).default}
+      )
+    },
+
+    {
+      path: "AccesorioDeportivo",
+        lazy: async () => ({ Component: (await import('./assets/pages/AceesorioDeportivo.tsx')).default}
+      )
+    },
+    {
+      path: "Fitness",
+        lazy: async () => ({ Component: (await import('./assets/pages/Fitness.tsx')).default}
+      )
+    },
+    {
+      path: "Bicicletas",
+        lazy: async () => ({ Component: (await import('./assets/pages/Bicicletas.tsx')).default}
+      )
+    },
+    {
+      path: "Promciones",
+        lazy: async () => ({ Component: (await import('./assets/pages/promociones.tsx')).default}
+      )
     }
 
     ]
