@@ -1,6 +1,10 @@
+import Headres from "../Components/Headres"
+
 const camisetas = () => {
   return (
-    <div>camisetas</div>
+    <>
+    <Headres titulo="Tendencias y colecciones" subtitulo="Salvame Negreira" img="/"/> 
+    </>
   )
 }
 
