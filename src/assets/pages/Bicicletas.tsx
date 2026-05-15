@@ -1,6 +1,10 @@
+import Headres from "../Components/Headres"
+
 const BIcicleta = () => {
   return (
-    <div>Bicicletas</div>
+    <>
+      <Headres titulo="Tendencias y colecciones" subtitulo="Salvame Negreira" img="/"/> 
+    </>
   )
 }
 
