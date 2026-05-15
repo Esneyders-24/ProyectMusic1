@@ -37,12 +37,13 @@ const Nav_inicio = [
 
     {
         nombre:"Bicicletas",
-        ruta:"Bicicletas"
+        ruta:"/Bicicletas"
     },
     {
         nombre: "Promociones",
-        ruta:"Promciones"
+        ruta:"/Promciones"
     }
+
 ]
 
 
@@ -55,8 +56,8 @@ const MainNavbar = () => {
                 <img className="flex w-20 h-auto object-cover " src={img1} alt="" />
             </h1>
             <ul className="flex gap-20 text-white"> 
-                    <li className="group relative cursor-pointer  hover:text-yellow-500 transition ">
-                        HOME 
+                    <li className="group relative cursor-pointer  hover:text-yellow-500 transition">
+                        <NavLink to="/">HOME</NavLink> 
                 </li>
              
 
