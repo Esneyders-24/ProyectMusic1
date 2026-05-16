@@ -29,8 +29,9 @@ const ranking = () => {
 
     return (
     <section className="min-h-screen bg-[#F9FAFB]">
-        <div className='max-w-7xl mx-auto px-3 py-20 '>
-            <h2 className="text-6xl  flex justify-center items-center gap-6 text-[#858B6F] font-semibold -mt-20 -translate-y-12 ">Ranking ✰</h2>
+        <div className='max-w-7xl mx-auto px-3 py-20 -mt-10'>
+            <h2 className="text-3xl md:text-6xl  flex justify-center items-center gap-6 text-[#858B6F] font-semibold mb-10 ">Ranking ✰</h2>
+            <div className="overflow-x-auto">
             <table className="min-w-full">
                 <thead className='border rounded-xl p-5'>
                     <tr>
@@ -55,6 +56,7 @@ const ranking = () => {
                 ))}
                 </tbody>
             </table>
+        </div>
         </div>
     </section>
   )
