@@ -16,19 +16,17 @@ const redesociales = [
   return (
     <footer className="bg-[#838B6F] text-white py-10 mt-10">
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 sm:flex-row items-center">
-
-        
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
         <div>
-          <h1 className="flex w-30 h-auto object-cover">
+          <h1 className="flex w-24 md:w-30 h-auto object-cover">
             <img src={logofooter} alt="" />
           </h1>
 
-          <p className="mt-3 text-white-300">
+          <p className="mt-3 text-white-300  text-sm md:text-base">
             Encuentra el equilibrio perfecto entre sofisticación y adrenalina. Ropa de vestir, equipamiento deportivo y las mejores bicicletas en un solo lugar.
           </p>
 
-            <div className='flex gap-4 mt-2 '>
+            <div className="flex gap-4 mt-2 ">
               {redesociales.map(irdsociales => (
                    <a key={irdsociales.nombre} 
                     href={irdsociales.Vinculo} target='_blank'
@@ -41,14 +39,14 @@ const redesociales = [
             </div>
 
         </div>
-        <div className="flex gap-20 ">
-          <div className=" flex flex-col gap-4 ">
-            <h2 className=" text-2xl font-semibold mb-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
+          <div className=" flex flex-col gap-4 whitespace-nowrap  ">
+            <h2 className=" text-xl md:text-2xl font-semibold mb-4 ">
               Categorias
             </h2>
 
             <ul className="space-y-2 text-gray-300">
-              <li className="hover:text-white transition whitespace-nowrap">
+              <li className="hover:text-white transition ">
                 Tendencias y colecciones
               </li>
 
@@ -67,8 +65,8 @@ const redesociales = [
             </ul>
           </div>
 
-          <div className=" flex flex-col gap-4 ">
-            <h2 className=" text-2xl font-semibold mb-4  whitespace-nowrap">
+          <div className=" flex flex-col gap-4 lg:whitespace-nowrap ml-0 lg:ml-20 ">
+            <h2 className=" text-xl md:text-2xl font-semibold mb-4   ">
               Ayuda al Cliente
             </h2>
 
@@ -100,13 +98,13 @@ const redesociales = [
             </ul>
           </div>
 
-          <div className=" flex flex-col gap-4 ml-13  ">
-            <h2 className=" text-2xl font-semibold mb-4  ">
+          <div className=" flex flex-col gap-4 whitespace-nowrap  ">
+            <h2 className=" text-xl md:text-2xl font-semibold mb-4 ml-0 lg:translate-x-40  ">
               Contacto
             </h2>
 
-            <ul className="space-y-2 text-gray-300">
-              <li className="hover:text-white transition whitespace-nowrap">
+            <ul className="space-y-2 text-gray-300 ml-0 lg:translate-x-40 ">
+              <li className="hover:text-white transition ">
                 ⚲ Av. Principal 123 Ciudad, País
               </li>
 
@@ -118,7 +116,7 @@ const redesociales = [
                 ✉︎ ventas@lunora.com
               </li>
 
-              <li className="hover:text-white transition whitespace-nowrap">
+              <li className="hover:text-white transition ">
                 Horario de Atención: <br />
                 Lun - Vie: 9:00 AM - 8:00 PM <br />
                 Sábados: 10:00 AM - 6:00 PM <br />
