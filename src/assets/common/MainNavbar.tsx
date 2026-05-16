@@ -51,11 +51,11 @@ const Nav_inicio = [
 const MainNavbar = () => {
 
     return (
-        <nav className="flex justify-between items-center px-10 py-4 bg-[#858B6F] ">
+        <nav className="flex flex-col md:flex-row justify-between items-center px-4 md:px-10 py-4 bg-[#858B6F] ">
             <h1 className="text-xl font-bold text-gray-800">
                 <img className="flex w-20 h-auto object-cover " src={img1} alt="" />
             </h1>
-            <ul className="flex gap-20 text-white"> 
+            <ul className="flex flex-col md:flex-row gap-6 md:gap-20 text-white mt-4 md:mt-0"> 
                     <li className="group relative cursor-pointer  hover:text-yellow-500 transition">
                         <NavLink to="/">HOME</NavLink> 
                 </li>
