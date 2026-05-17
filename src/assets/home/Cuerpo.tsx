@@ -54,10 +54,10 @@ const Cuerpo = () => {
                                 </section>
                         </div>
                         <div className="flex flex-col lg:flex-row  items-center">
-                                <section className="w-full lg:w-160 ml:10 h-auto mt-10 ml-18  block object-contain transition duration-400 hover:brightness-75">
+                                <section className="block object-contain transition duration-400 hover:brightness-75 w-full h-auto  mt-10 md:w-full md:h-auto  md:mt-10">
                                         <img src={promocion1} alt="" />
                                 </section>
-                                <section className="w-full lg:w-160 ml:10 h-auto mt-10 ml-18  block object-contain transition duration-400 hover:brightness-75">
+                                <section className="block object-contain transition duration-400 hover:brightness-75 w-full h-auto  mt-10 md:w-full md:h-auto md:ml-10 md:mt-10">
                                         <img src={promocional2} alt="" />
                                 </section>
                         </div>
@@ -96,13 +96,13 @@ const Cuerpo = () => {
                  </section>
                  <section className="mt-20">
                         <h1 className="font-serif">Tops de Bicicletas ×͜×</h1>
-                        <div className="grid grid-cols-4 gap-3 pt-8 w-fit mx-auto justify-items-center translate-5">
+                        <div className="grid grid-cols-4 gap-3 pt-8 w-fit mx-auto justify-items-center ">
                                         <img className="transition duration-400 hover:brightness-75" src={bicicleta1} alt="bicicleta1" />
                                         <img className="transition duration-400 hover:brightness-75" src={bicicleta2} alt="bicicleta2" />
                                         <img className="transition duration-400 hover:brightness-75" src={bicicleta3} alt="bicicleta3" />
                                         <img className="transition duration-400 hover:brightness-75" src={bicicleta4} alt="bicicleta4" />
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-8 w-fit mx-auto justify-items-center translate-5 ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-8 w-fit mx-auto justify-items-center  ">
                                         <img  className='transition duration-400 hover:brightness-75' src={bicicletarect1} alt="" />
                                         <img   className='transition duration-400 hover:brightness-75' src={bicicletarect2} alt="" />
                         </div>

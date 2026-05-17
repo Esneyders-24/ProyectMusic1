@@ -39,7 +39,7 @@ const redesociales = [
             </div>
 
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
           <div className=" flex flex-col gap-4 whitespace-nowrap  ">
             <h2 className=" text-xl md:text-2xl font-semibold mb-4 ">
               Categorias
@@ -65,7 +65,7 @@ const redesociales = [
             </ul>
           </div>
 
-          <div className=" flex flex-col gap-4 lg:whitespace-nowrap ml-0 lg:ml-20 ">
+          <div className=" flex flex-col gap-4 md:whitespace-nowrap ml-0 lg:ml-20 ">
             <h2 className=" text-xl md:text-2xl font-semibold mb-4   ">
               Ayuda al Cliente
             </h2>
@@ -99,7 +99,7 @@ const redesociales = [
           </div>
 
           <div className=" flex flex-col gap-4 whitespace-nowrap  ">
-            <h2 className=" text-xl md:text-2xl font-semibold mb-4 ml-0 lg:translate-x-40  ">
+            <h2 className=" text-xl md:text-2xl font-semibold mb-4 ml-0 md:translate-x-40  ">
               Contacto
             </h2>
 
