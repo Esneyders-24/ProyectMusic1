@@ -63,7 +63,7 @@ const MainNavbar = () => {
 
                 <li className="group relative cursor-pointer hover:text-yellow-500 transition">
                     PRODUCTOS <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
-                <ul className="hidden group-hover:block absolute bg-white text-black  top-full rounded-xl">
+                <ul className="hidden group-hover:block absolute bg-white text-black  top-full rounded-xl ">
                     
                     <li  className="p-2  hover:bg-yellow-400 text-center rounded-xl"> 
                             <NavLink to={Nav_inicio[0].ruta}>TENDENCIAS Y COLECCIONES </NavLink>
@@ -111,7 +111,7 @@ const MainNavbar = () => {
                 </li> 
 
             </ul>
-            <button className="bg-[#84AF05] text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
+            <button className="bg-[#84AF05] text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition mt-4 mr-10">
                 Iniciar Sesion
             </button>
 
