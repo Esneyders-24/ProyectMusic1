@@ -1,48 +1,35 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import img2 from '../img/Simbolito (1).png'
 import img1 from '../img/img1tv.png'
+import { faBars, faCartShopping, faXmark } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Link } from "react-router-dom"
 
 const Nav_inicio = [
-    {
-        nombre: "Tendencias y colecciones",
-        ruta: "/Tendencias" 
-    }, 
-    {
-        nombre: "Ropas",
-        ruta: "/Ropas"
-    },
-    {
-        nombre:"Zapatos",
-        ruta: "/Zapatos"
-    },
-    {
-        nombre: "Accesorios",
-        ruta: "/Accesorios"
-    }, 
 
     {
-        nombre: "Camiseta",
-        ruta: "/Camisetas"
+        id: "Tendencias y colecciones",
+        etiqueta: "Productos",
+        submenu: ["Tendencias y colecciones", "Ropas", "Zapatos", "Accesorios"],
+        ruta: ["/Tendencias", "/Ropas", "/Zapatos" ,"/Accesorios"]
+        
+    },
+    {
+        id: "Ropas",
+        etiqueta: "Deportes y Aire libre",
+        submenu: ["Camisetas", "Accesorios deportivos", "Fitness", "Bicicletas"],
+        ruta:["/Camisetas","/AccesorioDeportivo","/Fitness","/Bicicletas"]
+
+    },
+    {
+        id: "Ofertas",
+        etiqueta: "Ofertas",
+        submenu: ["Promociones"],
+        ruta:["/Promociones"]
     },
 
-    {
-        nombre: "Accesorio Deportivo",
-        ruta:"/AccesorioDeportivo"
-    },
 
-    {
-        nombre:"Fitness",
-        ruta:"/Fitness"
-    },
-
-    {
-        nombre:"Bicicletas",
-        ruta:"/Bicicletas"
-    },
-    {
-        nombre: "Promociones",
-        ruta:"/Promciones"
-    }
 
 ]
 
@@ -50,75 +37,60 @@ const Nav_inicio = [
 
 const MainNavbar = () => {
 
+    const [menuMovilVisible, setMenuMovilVisible] = useState(false)
+
     return (
-        <nav className="flex flex-col md:flex-row justify-between items-center px-4 md:px-10 py-4 bg-[#858B6F] ">
-            <h1 className="text-xl font-bold text-gray-800">
-                <img className="flex w-20 h-auto object-cover " src={img1} alt="" />
-            </h1>
-            <ul className="flex flex-col md:flex-row gap-6 md:gap-20 text-white mt-4 md:mt-0"> 
-                    <li className="group relative cursor-pointer  hover:text-yellow-500 transition">
-                        <NavLink to="/">HOME</NavLink> 
+        <nav className="bg-[#858B6F] sticky top-0 z-50 shadow-lg">
+
+            <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-10 py-4">
+                <Link to="/">
+                <img className="w-20 h-auto object-cover" src={img1} alt="logo" />
+                </Link>
+                <div className="hidden md:flex">
+                  
+                    <ul className="flex list-none ml-8">
+                        {Nav_inicio.map(itemMenu => (
+                            <li key={itemMenu.id} className="relative group">  
+                                                              
+                            <div className="flex items-center gap-2 px-5 py-3  text-white text-sm  hover:bg-yellow-300  hover:text-black rounded-lg transition duration-300"> {itemMenu.etiqueta} <img src={img2} className="w-4 h-auto object-contain" alt=""/></div>
+                         <ul className="hidden group-hover:block absolute top-full left-0 bg-white min-w-55 rounded-xl shadow-xl overflow-hidden">
+                        {itemMenu.submenu.map((sub, index) => (
+                        <li key={index}> <NavLink to={itemMenu.ruta[index]} className="block px-4 py-3 text-black hover:bg-yellow-300 transition duration-300">{sub}</NavLink></li>
+                        ))}
+                    </ul>
                 </li>
-             
-
-                <li className="group relative cursor-pointer hover:text-yellow-500 transition">
-                    PRODUCTOS <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
-                <ul className="hidden group-hover:block absolute bg-white text-black  top-full rounded-xl ">
-                    
-                    <li  className="p-2  hover:bg-yellow-400 text-center rounded-xl"> 
-                            <NavLink to={Nav_inicio[0].ruta}>TENDENCIAS Y COLECCIONES </NavLink>
+             ))}
+        </ul>
+    </div>
+                <div className="flex items-center gap-4">
+                <button className="p-2 text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
+                    <FontAwesomeIcon icon={faCartShopping} className="size-5"/>
+                </button>
+                 <button className="md:hidden p-2 text-white hover:text-yellow-300 transition duration-300 cursor-pointer"
+                        onClick={() => 
+                        setMenuMovilVisible(!menuMovilVisible)}>
+                    <FontAwesomeIcon icon={menuMovilVisible ? faXmark: faBars} className="size-6"/>
+                </button>
+            </div>
+        </div>
+            {menuMovilVisible && (
+                <div className="md:hidden bg-[#6F755C] border-t  border-white/10 shadow-2xl">
+                    <ul className="flex flex-col py-4">
+                            {Nav_inicio.map(itemMenu => (
+                        <li key={itemMenu.id} className="border-b border-white/10">
+                        <a href="" className="flex justify-between items-center px-6 py-4 text-white hover:bg-yellow-300 hover:text-black transition duration-300">{itemMenu.etiqueta}<img src={img2} className="w-4 h-auto hidden" alt=""/></a>
+                                <ul className="bg-[#6F755C]">
+                                {itemMenu.submenu.map((sub, index) => (
+                                <li key={index}>
+                                <NavLink to={itemMenu.ruta[index]} className=" block px-10 py-3 text-white  hover:bg-yellow-300 transition duration-300 ">{sub} </NavLink></li>
+                             ))}
+                        </ul>
                     </li>
-                    
-                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
-                            <NavLink to={Nav_inicio[1].ruta}> ROPAS </NavLink>
-                    </li>
-                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
-                            <NavLink to={Nav_inicio[2].ruta}>ZAPATOS </NavLink>
-                    </li>
-                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
-                            <NavLink to={Nav_inicio[3].ruta}>ACCESORIOS </NavLink>
-                    </li>    
-                    </ul>
-
-
-                </li>   
-                 <li className="group relative cursor-pointer hover:text-yellow-500 transition">
-                     DEPORTES Y AIRE LIBRE  <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
-                <ul className="hidden group-hover:block absolute bg-white text-black top-full rounded-xl ">
-                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl">
-                            <NavLink to={Nav_inicio[4].ruta}>CAMISETAS</NavLink>
-                    </li>
-                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl ">
-                            <NavLink to={Nav_inicio[5].ruta}>ACCESOSRIOS DEPORTIVOS</NavLink>  
-                    </li>
-                    <li className="p-2 hover:bg-yellow-400 text-center rounded-xl ">
-                            <NavLink to={Nav_inicio[6].ruta}>FITNESS</NavLink>  
-                    </li>
-                    <li className="p-2 hover:bg-yellow-400 text-center  rounded-xl ">
-                            <NavLink to={Nav_inicio[7].ruta}>BICICLETAS</NavLink> 
-                    </li>
-
-                    </ul>
-                </li>                  
-
-                <li className="group relative cursor-pointer  hover:text-yellow-500 transition">
-                     OFERTAS <img  className="w-4 h-auto object-contain ml-auto translate-x-6 block -mt-4"  src={img2} alt="" />
-                <ul className="hidden group-hover:block absolute bg-white text-black top-full rounded-xl ">
-                    <li className="p-2 hover:bg-yellow-400 rounded-xl">
-                            <NavLink to={Nav_inicio[8].ruta}>PROMOCIONES</NavLink>
-                    </li>
-                    </ul>
-                </li> 
-
-            </ul>
-            <button className="bg-[#84AF05] text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition mt-4 mr-10">
-                Iniciar Sesion
-            </button>
-
-
-        </nav>
-
-
+                    ))}
+                </ul>
+            </div>
+        )}
+    </nav>
 
     )
 
