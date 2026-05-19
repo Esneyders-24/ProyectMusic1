@@ -1,6 +1,6 @@
 import { CONFIG } from "../../config";
 import type { tendencias_colecciones } from "../../types/TendenciaYC";
-console.log(CONFIG.API_URL)
+
 const API_URL = `${CONFIG.API_URL}${CONFIG.ENDPOINTS.TENDENCIASYCOLECCIONES}`
 
 export const fectTendenciayc = async (signal?: AbortSignal): Promise<tendencias_colecciones[]> => {
