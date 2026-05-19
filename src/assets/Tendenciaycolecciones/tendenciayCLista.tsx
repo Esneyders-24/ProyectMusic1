@@ -97,7 +97,7 @@ const tendenciayCLista = () => {
                         )
                         .map(producto => (
                             <div key={producto.idtendenciayC} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2">
-                                <img src={`http://localhost/serviciosweb/img/${producto.imagen}`} alt={producto.nombre} className="w-full h-72 object-cover"/>
+                                <img src={`https://andersones78x0.alwaysdata.net/img/${producto.imagen}`} alt={producto.nombre} className="w-full h-72 object-cover"/>
                                 <div className="p-5">
                                     <h3 className="font-bold text-lg line-clamp-1">{producto.nombre}</h3>
                                     <p className="text-gray-500 text-sm mt-3 line-clamp-3"> {producto.descripcion}</p>
