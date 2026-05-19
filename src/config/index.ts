@@ -5,7 +5,8 @@ export const CONFIG = {
     ENV: import.meta.env.VITE_ENVIRONMENT,
 
     ENDPOINTS:{
-        TENDENCIASYCOLECCIONES: '/tendencias_colecciones.php'  
+        TENDENCIASYCOLECCIONES: '/tendencias_colecciones.php',
+        ROPA:'/Ropas.php'  
     },
 
     version: '1.0.0'
