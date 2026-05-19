@@ -29,15 +29,14 @@ const Nav_inicio = [
         ruta:["/Promociones"]
     },
 
-
-
 ]
-
 
 
 const MainNavbar = () => {
 
     const [menuMovilVisible, setMenuMovilVisible] = useState(false)
+
+
 
     return (
         <nav className="bg-[#858B6F] sticky top-0 z-50 shadow-lg">
