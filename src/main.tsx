@@ -34,7 +34,7 @@ const vinculacion = createBrowserRouter([
       },
       {
         path: "Ropas",
-        lazy: async () => ({ Component: (await import('./assets/pages/Ropas.tsx')).default}
+        lazy: async () => ({ Component: (await import('./assets/Ropa/index.tsx')).default}
       )
     },
     {
