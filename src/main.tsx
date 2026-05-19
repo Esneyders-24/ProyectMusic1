@@ -1,10 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import {ReactQueryDevtools} from '@tanstack/react-query-devtools'
 
 import './index.css'
 import App from './App.tsx'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1
+    }
+  }
+})
 
 const vinculacion = createBrowserRouter([
   {
@@ -19,7 +29,7 @@ const vinculacion = createBrowserRouter([
       },
       {
         path: "Tendencias",
-        lazy: async () => ({ Component: (await import('./assets/pages/tendenciasycolecciones.tsx')).default}
+        lazy: async () => ({ Component: (await import('./assets/Tendenciaycolecciones/index.tsx')).default}
       )
       },
       {
@@ -70,6 +80,9 @@ const vinculacion = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <QueryClientProvider client={queryClient}>
     <RouterProvider router = {vinculacion} />
+    <ReactQueryDevtools initialIsOpem= {false}/>
+    </QueryClientProvider>
   </StrictMode>,
 )
