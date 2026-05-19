@@ -82,7 +82,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
     <RouterProvider router = {vinculacion} />
-    <ReactQueryDevtools initialIsOpem= {false}/>
+    <ReactQueryDevtools initialIsOpen= {false}/>
     </QueryClientProvider>
   </StrictMode>,
 )
