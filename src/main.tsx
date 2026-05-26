@@ -72,6 +72,11 @@ const vinculacion = createBrowserRouter([
       path: "Promociones",
         lazy: async () => ({ Component: (await import('./assets/pages/promociones.tsx')).default}
       )
+    },
+    {
+      path: "*",
+        lazy: async () => ({ Component: (await import('./assets/pages/Pagina404.tsx')).default}
+      )
     }
     ]
   }
