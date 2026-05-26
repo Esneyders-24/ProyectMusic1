@@ -1,6 +1,10 @@
 import { useState } from "react"
 import { usetendenciaycolecciones } from "./usetendenciaycolecciones"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import { faBagShopping, faEye } from "@fortawesome/free-solid-svg-icons"
+
 const tendenciayCLista = () => {
 
     const { tendenciasycolecciones, cargando, error, tieneDatos
@@ -37,7 +41,7 @@ const tendenciayCLista = () => {
 
     return (
         <div className="flex flex-col md:flex-row gap-10">
-            <div className="w-full md:w-1/4 bg-white shadow-xl rounded-2xl p-6 h-fit">
+            <div className="w-full md:w-1/3 lg:w-1/4 xl:w-1/5 bg-white shadow-xl rounded-2xl p-6 h-fit">
                 <h3 className="text-2xl font-bold mb-6"> Categorías</h3>
                 {!tieneDatos ? (
                     <div> No se encontraron datos</div>
@@ -67,10 +71,10 @@ const tendenciayCLista = () => {
                  )}
 
             </div>
-                <div className="w-full md:w-3/4">
-                    <div className="flex justify-between items-center mb-8">
+                <div className="w-full md:w-3/4 ">
+                    <div className="flex justify-between items-center mb-8 ">
                      <div>
-                        <h2 className="text-3xl font-bold">{categoriaSeleccionada}</h2>
+                        <h2 className="text-3xl font-bold ">{categoriaSeleccionada}</h2>
 
                         <p className="text-black mt-1">
 
@@ -96,8 +100,25 @@ const tendenciayCLista = () => {
                                 item.categoria === categoriaSeleccionada
                         )
                         .map(producto => (
-                            <div key={producto.idtendenciayC} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2">
-                                <img src={`https://andersones78x0.alwaysdata.net/img/${producto.imagen}`} alt={producto.nombre} className="w-full h-72 object-cover"/>
+                            <div key={producto.idtendenciayC} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2  relative group">
+                                <img src={`https://andersones78x0.alwaysdata.net/img/${producto.imagen}`} alt={producto.nombre} className="w-full h-auto object-cover"/>
+
+                                <div className="absolute bg-black/10 flex items-center justify-center inset-0 gap-3  group-hover:opacity-100  opacity-0 transition-opacity duration-300 z-20 ">
+                                    {[
+                                        { icon: faEye, label: 'Vista rapida', delay:'' },
+                                        { icon: faBagShopping, label: 'Añadir al carrito', delay:'delay-75' },
+                                    ].map((btn, idx) => (
+                                        <button key={idx}
+                                            type="button"
+                                            title={btn.label}
+                                            className={`flex items-center cursor-pointer justify-center w-10 h-10 rounded-full bg-white text-[#6F755C] hover:bg-[#6F755C] 
+                                             hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 shadow-lg focus:ring-2 focus:ring-[#6F755C]  ${btn.delay}`}>
+                                            <FontAwesomeIcon icon={btn.icon}/>
+
+                                        </button>
+                                     ))}
+
+                                </div>
                                 <div className="p-5">
                                     <h3 className="font-bold text-lg line-clamp-1">{producto.nombre}</h3>
                                     <p className="text-gray-500 text-sm mt-3 line-clamp-3"> {producto.descripcion}</p>
