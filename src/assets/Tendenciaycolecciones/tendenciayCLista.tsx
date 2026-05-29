@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { faBagShopping, faEye } from "@fortawesome/free-solid-svg-icons"
 
+import { Link } from "react-router-dom"
+
+
+
 const tendenciayCLista = () => {
 
     const { tendenciasycolecciones, cargando, error, tieneDatos
@@ -101,6 +105,7 @@ const tendenciayCLista = () => {
                         )
                         .map(producto => (
                             <div key={producto.idtendenciayC} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2  relative group">
+                                <Link to={`/detalletendencia/${producto.idtendenciayC}`} >
                                 <img src={`https://andersones78x0.alwaysdata.net/img/${producto.imagen}`} alt={producto.nombre} className="w-full h-auto object-cover"/>
 
                                 <div className="absolute bg-black/10 flex items-center justify-center inset-0 gap-3  group-hover:opacity-100  opacity-0 transition-opacity duration-300 z-20 ">
@@ -119,6 +124,8 @@ const tendenciayCLista = () => {
                                      ))}
 
                                 </div>
+                                </Link>
+
                                 <div className="p-5">
                                     <h3 className="font-bold text-lg line-clamp-1">{producto.nombre}</h3>
                                     <p className="text-gray-500 text-sm mt-3 line-clamp-3"> {producto.descripcion}</p>
