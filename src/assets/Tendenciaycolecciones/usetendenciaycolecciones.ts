@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query"
 import { fectTendenciayc } from "../services/tendenciasYC_services"
 
 
-export const usetendenciaycolecciones = () => {
+export const usetendenciaycolecciones = ( idcategoria?:number | string ) => {
     const { data, isLoading, error } = useQuery ({
-            queryKey: ['tendenciaycolecciones'],
-            queryFn: ({ signal }) => fectTendenciayc(signal)
+            queryKey: ['tendenciaycolecciones', idcategoria],
+            queryFn: ({ signal }) => fectTendenciayc(idcategoria, signal)
     })
 
     return{
