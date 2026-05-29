@@ -4,6 +4,7 @@ import { useRopa } from "./useRopa"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { faBagShopping, faEye } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "react-router-dom"
 
 const RopaLista = () => {
      const { Ropas, cargando, error, tieneDatos1
@@ -101,8 +102,13 @@ const RopaLista = () => {
                         )
                         .map(producto => (
                             <div key={producto.idRopas} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2 relative group">
+                               
+                                <Link to="/productodetalle">
                                 <img src={`https://andersones78x0.alwaysdata.net/img/${producto.imagen}`} alt={producto.nombre} className="w-full h-72 object-cover"/>
-                                                            <div className="absolute bg-black/10 flex items-center justify-center inset-0 gap-3  group-hover:opacity-100  opacity-0 transition-opacity duration-300 z-20 ">
+                                
+                               
+                                
+                                    <div className="absolute bg-black/10 flex items-center justify-center inset-0 gap-3  group-hover:opacity-100  opacity-0 transition-opacity duration-300 z-20 ">
                                     {[
                                         { icon: faEye, label: 'Vista rapida', delay:'' },
                                         { icon: faBagShopping, label: 'Añadir al carrito', delay:'delay-75' },
@@ -118,7 +124,7 @@ const RopaLista = () => {
                                      ))}
 
                                 </div>
-
+                                </Link>
 
 
                                 <div className="p-5">
@@ -130,8 +136,9 @@ const RopaLista = () => {
                                     </div>
 
                                 </div>
-
+                           
                             </div>
+                             
 
                         ))}
 
