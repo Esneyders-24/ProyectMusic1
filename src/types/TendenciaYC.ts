@@ -6,4 +6,13 @@ export interface tendencias_colecciones {
     imagen: string;
     categoria: string;
     stock: number;
+
+    pais: string;
+    valoracion: number;
+    tallas: string;
+    descripcion_Profunda: string;
+    vendidos: string;
+    codigo_ropa: string;
+    personas_viendo: number;
+    imagenGrande: string;
 }
