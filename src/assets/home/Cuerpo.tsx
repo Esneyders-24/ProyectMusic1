@@ -22,8 +22,7 @@ import bicicleta1 from '../img/bicicleta1.png'
 import bicicleta2 from '../img/bicicleta2.png'
 import bicicleta3 from '../img/bicicleta3.png'
 import bicicleta4 from '../img/bicicleta4.png'
-import bicicletarect1 from '../img/lunora_bicicletas_615x220.png'
-import bicicletarect2 from '../img/lunora_claro_615x220.png'
+
 
 const Cuerpo = () => {
         const [emblaRef] = useEmblaCarousel()
@@ -80,16 +79,16 @@ const Cuerpo = () => {
                         <div className="overflow-hidden max-w-7xl mx-auto mt-10 " ref={emblaRef}>
                                <div className="flex gap-4 ml-10">
                                    <div className="flex-[0_0_auto]">
-                                        <img  className="w-full h-auto object-cover" src={carrsuel1}/>
+                                        <img  className="w-50 h-50 object-cover md:w-auto md:h-auto " src={carrsuel1}/>
                                         </div>
                                     <div className="flex-[0_0_auto]  ">
-                                        <img  className="w-full h-auto object-cover" src={carrusel2}/>
+                                        <img  className="w-50 h-50 object-cover md:w-auto md:h-auto " src={carrusel2}/>
                                         </div>
                                      <div className="flex-[0_0_auto]  ">
-                                        <img  className="w-full h-auto object-cover" src={carrusel3}/>
+                                        <img  className="w-50 h-50 object-cover md:w-auto md:h-auto " src={carrusel3}/>
                                         </div>
                                      <div className="flex-[0_0_auto]  ">
-                                        <img  className="w-full h-auto object-cover" src={carrusel4}/>
+                                        <img  className="w-50 h-50 object-cover md:w-auto md:h-auto " src={carrusel4}/>
                                         </div>    
                                 </div>
                         </div>
@@ -102,10 +101,7 @@ const Cuerpo = () => {
                                         <img className="transition duration-400 hover:brightness-75" src={bicicleta3} alt="bicicleta3" />
                                         <img className="transition duration-400 hover:brightness-75" src={bicicleta4} alt="bicicleta4" />
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-8 w-fit mx-auto justify-items-center  ">
-                                        <img  className='transition duration-400 hover:brightness-75' src={bicicletarect1} alt="" />
-                                        <img   className='transition duration-400 hover:brightness-75' src={bicicletarect2} alt="" />
-                        </div>
+                       
                  </section>
                 </main>
 
