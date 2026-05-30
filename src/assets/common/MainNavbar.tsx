@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import img2 from '../img/Simbolito (1).png'
 import img1 from '../img/img1tv.png'
-import { faBars, faCartShopping, faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faCartShopping, faUser, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "react-router-dom"
 
@@ -62,9 +62,13 @@ const MainNavbar = () => {
         </ul>
     </div>
                 <div className="flex items-center gap-4">
-                <button className="p-2 text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
-                    <FontAwesomeIcon icon={faCartShopping} className="size-5"/>
+                <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
+                    <FontAwesomeIcon icon={faCartShopping} className="size-5"/> Shopping
                 </button>
+                <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
+                    <FontAwesomeIcon icon={faUser} className="size-5"/> Usuario
+                </button>
+
                  <button className="md:hidden p-2 text-white hover:text-yellow-300 transition duration-300 cursor-pointer"
                         onClick={() => 
                         setMenuMovilVisible(!menuMovilVisible)}>
