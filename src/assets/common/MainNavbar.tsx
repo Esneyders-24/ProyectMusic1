@@ -63,10 +63,10 @@ const MainNavbar = () => {
     </div>
                 <div className="flex items-center gap-4">
                 <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
-                    <FontAwesomeIcon icon={faCartShopping} className="size-5"/> Shopping
+                    <FontAwesomeIcon icon={faCartShopping} className="size-5"/>  Shopping
                 </button>
                 <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
-                    <FontAwesomeIcon icon={faUser} className="size-5"/> Usuario
+                    <FontAwesomeIcon icon={faUser} className="size-5"/>  Usuario
                 </button>
 
                  <button className="md:hidden p-2 text-white hover:text-yellow-300 transition duration-300 cursor-pointer"
