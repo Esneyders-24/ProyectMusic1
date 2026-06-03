@@ -15,4 +15,7 @@ export interface tendencias_colecciones {
     codigo_ropa: string;
     personas_viendo: number;
     imagenGrande: string;
+    ImgenP1: string;
+    ImgenP2: string;
+    Reflejos: string;
 }
