@@ -1,16 +1,21 @@
 import { useParams } from "react-router-dom"
 import {useTendenciaDetalle} from "./useTendeciaDetalle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faMoneyBill, faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
-import DOMPurify from 'dompurify'
+
+
+import { CONFIG } from "../../../config";
 
 const DetalleTendencia = () => {
     const { idtendenciayC } = useParams<{ idtendenciayC: string }>()
     const { tendencia, cargando, error, tieneDatos  } = useTendenciaDetalle(idtendenciayC)
-    
-    
+const reviews = { href: '#', average: 4, totalCount: 117 }
+function classNames(...classes: string[] ) {
+  return classes.filter(Boolean).join(' ')
+}
+
     
     if (cargando) return (
         <div className="p-20 text-center space-y-4">
@@ -25,48 +30,56 @@ const DetalleTendencia = () => {
             <p className="text-red-500"> {error}  </p>
         </div>
     )
+
+ 
   return (
-    <div className='max-w-7xl mx-auto px-3 py-10'>
-    <div className="flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 px-3">
-          <img src={`https://andersones78x0.alwaysdata.net/img/${tendencia.imagenGrande}`} alt="" className="w-full h-auto object-cover"/>
-      
-  </div>
-  <div className="w-full md:w-1/2 px-3">
-     <h2>{tendencia.nombre}</h2>
-     <table>
-      <tbody>
-        <tr>
-          <th>Precio</th>
-          <td>{tendencia.precio}</td>
-        </tr>
-        <tr>
-          <th>Tallas</th>
-          <td>{tendencia.tallas}</td>
-        </tr>
-        <tr>
-          <th>Vendidos</th>
-          <td>{tendencia.vendidos}</td>
-        </tr>
-        <tr>
-          <th>Atencion al cliente</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Pais</th>
-          <td>{tendencia.pais}</td>
-        </tr>
-        <tr>
-          <th>Codigo Ropa</th>
-          <td>{tendencia.codigo_ropa}</td>
-        </tr>
-        <tr>
-          <th>Personas Viendo</th>
-          <td>{tendencia.personas_viendo}</td>
-        </tr>
-        <tr>
-          <th>Valoracion</th>
-          <td>{Array.from({ length: 5 }).map((_, index) => {
+    <div className="bg-white">
+      <div className="pt-6">
+
+        {/* Image gallery */}
+        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8  ">
+          <img src={`${CONFIG.API_URL}/img/${tendencia.imagenGrande}`} className="row-span-2 aspect-3/4 size-full rounded-3xl object-contain max-lg:hidden transition-all duration-300 hover:scale-105 "/>
+          <img src={`${CONFIG.API_URL}/img/${tendencia.imagen}`}className="col-start-2 aspect-3/2 size-full rounded-3xl object-cover-contain  max-lg:hidden transition-all duration-300 hover:scale-105 "/>
+          <img src={`${CONFIG.API_URL}/img/${tendencia.ImgenP2}`} className="col-start-2 row-start-2 aspect-3/2 size-full rounded-3xl object-cover-contain max-lg:hidden transition-all duration-300 hover:scale-105"/>
+          <img src={`${CONFIG.API_URL}/img/${tendencia.ImgenP1}`} className="row-span-2 aspect-4/5 size-full object-contain md:object-cover sm:rounded-3xl lg:aspect-3/4  transition-all duration-300 hover:scale-105"/>
+        </div>
+
+        {/* Product info */}
+        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{tendencia.nombre}</h1>
+          </div>
+
+          {/* Options */}
+          <div className="mt-4 lg:row-span-3 lg:mt-0">
+            <h2 className="text-2xl">Precio <FontAwesomeIcon icon={faMoneyBill} className="text-[#858B6F]"/> </h2>           
+            <p className="text-3xl tracking-tight text-gray-900 mt-2">  {'S/'} {tendencia.precio}</p>
+
+
+
+          {/*Tallas*/}
+
+          <div className="mt-6">
+              <h2 className="mt-4">Tallas</h2> 
+              <div className="grid grid-cols-4 gap-3 mt-4">
+                {tendencia.tallas.split(',').map((talla) => (
+                    <label key={talla} className="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-checked:border-[#858B6F] has-checked:bg-[#858B6F] has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-[#858B6F] has-disabled:border-gray-400 has-disabled:bg-gray-200 has-disabled:opacity-25 ">
+                      <input type="radio" name="size " className="opacity-0 absolute inset-0  appearance-none focus:outline-none disabled:cursor-not-allowed "/>
+                      <span className="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white"> {talla}</span>
+                    </label>
+                ))}
+              </div>             
+          </div>
+
+
+
+
+            {/* Reviews */}
+            <div className="mt-6">
+              <h3 className="sr-only">Reviews</h3>
+              <div className="flex items-center">
+                <div className="flex items-center">
+                 {Array.from({ length: 5 }).map((_, index) => {
             const promedio =  Math.floor(  tendencia?.valoracion ?? 0 )
             const estrellaLlena = index < promedio;
             return(
@@ -75,22 +88,59 @@ const DetalleTendencia = () => {
               </span>
             )
           })}
-            
-            {tendencia.valoracion}</td>
-        </tr>
-      </tbody>
-     </table>
-     <h3>Descripcion</h3>
-     <div dangerouslySetInnerHTML={{
-      __html: DOMPurify.sanitize(tendencia?.descripcion_Profunda || "")
-     }}> 
-     </div>
-  </div>
-</div>
-</div>
+                </div>
+                <a href={reviews.href} className="ml-3 text-sm font-medium text-[#858B6F] hover:text-[#858B6F]">
+                  {tendencia.personas_viendo} Visualizaciones
+                </a>
+              
+              </div>
+              <div className="mt-4">
+                    <p className="flex gap-2 items-center">
+                   <FontAwesomeIcon icon={faGlobe} className="text-2xl"/>
+                   <span>{tendencia.pais}</span>
+                   </p>
+                </div>
+            </div>
+
+            {/*Boton*/}
+            <form className="mt-10">
+              <button
+                type="submit"
+                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-[#858B6F] px-8 py-3 text-base font-medium text-white hover:bg-[#858B6F] focus:ring-2 focus:ring-[#858B6F] focus:ring-offset-2 focus:outline-hidden"> Agregar Carrito 
+              </button>
+            </form>
+          </div>
+
+          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">
+            {/* Description and details */}
+            <div>
+              <h3 className="sr-only">Description</h3>
+
+              <div className="space-y-6">
+                <p className="text-base text-gray-900">{tendencia.descripcion_Profunda}</p>
+              </div>
+            </div>
+
+           <div className="mt-10">
+            <h3 className="text-sm font-medium text-gray-900">Reflejos</h3>
+              <div className="mt-4">
+                  <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                    {tendencia.Reflejos.split('.').filter(reflejo => reflejo.trim() !== '').map((Reflejos) => (
+                      <li key={Reflejos} className="text-gray-400">
+                         <span className="text-gray-600">{Reflejos}</span>
+                      </li>
+                    ))}
+                  </ul>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     
   )
 }
+
 
 export default DetalleTendencia
