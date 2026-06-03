@@ -4,7 +4,7 @@ export const CONFIG = {
 
     ENDPOINTS:{
         TENDENCIASYCOLECCIONES: '/tendencias_colecciones.php',
-        ROPA:'/Ropas.php'  
+        ROPA:'/Ropas.php',  
     },
 
     version: '1.0.0'
