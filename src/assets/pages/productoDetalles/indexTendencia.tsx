@@ -31,6 +31,12 @@ function classNames(...classes: string[] ) {
         </div>
     )
 
+   const ZoomImagen = (event: any) => {
+      const { left, top, width, height } = event.target.getBoundingClientRect()
+      const x = ((event.clientX - left) / width) * 100
+      const y = ((event.clientY - top) / height) * 100
+      event.target.style.transformOrigin = `${x}% ${y}%`
+   } 
  
   return (
     <div className="bg-white">
@@ -38,10 +44,16 @@ function classNames(...classes: string[] ) {
 
         {/* Image gallery */}
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8  ">
-          <img src={`${CONFIG.API_URL}/img/${tendencia.imagenGrande}`} className="row-span-2 aspect-3/4 size-full rounded-3xl object-contain max-lg:hidden transition-all duration-300 hover:scale-105 "/>
+          <div className="row-span-2 overflow-hidden rounded-3xl">
+          <img src={`${CONFIG.API_URL}/img/${tendencia.imagenGrande}`} className="row-span-2 aspect-3/4 size-full rounded-3xl object-contain max-lg:hidden transition-transform duration-300 hover:scale-[2]"
+          onMouseMove={ZoomImagen}/>
+          </div>
           <img src={`${CONFIG.API_URL}/img/${tendencia.imagen}`}className="col-start-2 aspect-3/2 size-full rounded-3xl object-cover-contain  max-lg:hidden transition-all duration-300 hover:scale-105 "/>
           <img src={`${CONFIG.API_URL}/img/${tendencia.ImgenP2}`} className="col-start-2 row-start-2 aspect-3/2 size-full rounded-3xl object-cover-contain max-lg:hidden transition-all duration-300 hover:scale-105"/>
-          <img src={`${CONFIG.API_URL}/img/${tendencia.ImgenP1}`} className="row-span-2 aspect-4/5 size-full object-contain md:object-cover sm:rounded-3xl lg:aspect-3/4  transition-all duration-300 hover:scale-105"/>
+          <div  className="row-span-2 overflow-hidden rounded-3xl">
+          <img src={`${CONFIG.API_URL}/img/${tendencia.ImgenP1}`} className="row-span-2 aspect-4/5 size-full object-contain md:object-cover sm:rounded-3xl lg:aspect-3/4  transition-transform duration-300 hover:scale-[2]"
+          onMouseMove={ZoomImagen}/>
+          </div>
         </div>
 
         {/* Product info */}

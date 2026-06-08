@@ -5,6 +5,8 @@ import img1 from '../img/img1tv.png'
 import { faBars, faCartShopping, faUser, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "react-router-dom"
+import Carrito from '../pages/Carrito/index'
+
 
 const Nav_inicio = [
 
@@ -63,9 +65,11 @@ const MainNavbar = () => {
     </div>
                 <div className="flex items-center gap-4">
                 <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
+                     <Link to="/carrito">
                     <FontAwesomeIcon icon={faCartShopping} className="size-5"/>  Shopping
+                    </Link>
                 </button>
-                <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">
+                <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">     
                     <FontAwesomeIcon icon={faUser} className="size-5"/>  Usuario
                 </button>
 

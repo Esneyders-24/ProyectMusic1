@@ -3,11 +3,11 @@ import type { tendencias_colecciones } from "../../types/TendenciaYC";
 
 const API_URL = `${CONFIG.API_URL}${CONFIG.ENDPOINTS.TENDENCIASYCOLECCIONES}`
 
-export const fectTendenciayc = async ( idcategoria?: number | string,   signal?: AbortSignal): 
+export const fectTendenciayc = async (categoria?: string, signal?: AbortSignal): 
 Promise<tendencias_colecciones[]> => {
     const url = new URL(API_URL)
-    if(idcategoria){
-       url.searchParams.append("idcategoria", idcategoria.toString())
+    if(categoria){
+       url.searchParams.append("idcategoria", categoria.toString())
     }
 
     const response = await fetch(url.toString(), {signal})

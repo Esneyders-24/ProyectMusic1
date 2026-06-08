@@ -29,12 +29,12 @@ const vinculacion = createBrowserRouter([
       },
       {
         path: "Tendencias",
-        lazy: async () => ({ Component: (await import('./assets/Tendenciaycolecciones/index.tsx')).default}
+        lazy: async () => ({ Component: (await import('./assets/pages/Tendenciaycolecciones/index.tsx')).default}
       )
       },
       {
         path: "Ropas",
-        lazy: async () => ({ Component: (await import('./assets/Ropa/index.tsx')).default}
+        lazy: async () => ({ Component: (await import('./assets/pages/Ropa/index.tsx')).default}
       )
     },
     {
@@ -73,6 +73,13 @@ const vinculacion = createBrowserRouter([
         lazy: async () => ({ Component: (await import('./assets/pages/promociones.tsx')).default}
       )
     },
+
+    {
+      path: "carrito",
+        lazy: async () => ({ Component: (await import('./assets/pages/Carrito')).default}
+      )
+    },
+
     {
       path: "*",
         lazy: async () => ({ Component: (await import('./assets/pages/Pagina404.tsx')).default}
