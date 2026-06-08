@@ -1,5 +1,5 @@
 import Headres from "../../Components/Headres"
-import img1 from "../img/ds3.png"
+import img1 from "../../img/ds3.png"
 import TendenciayClista1 from "./tendenciayCLista"
 
 const tendenciasycolecciones = () => {
