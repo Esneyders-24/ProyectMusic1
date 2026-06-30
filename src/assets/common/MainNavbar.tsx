@@ -30,6 +30,12 @@ const Nav_inicio = [
         submenu: ["Promociones"],
         ruta:["/Promociones"]
     },
+     {
+        id: "Empleados",
+        etiqueta: "Empleados",
+        submenu: ["Empleados"],
+        ruta:["/Empleado"]
+    },
 
 ]
 
@@ -69,8 +75,10 @@ const MainNavbar = () => {
                     <FontAwesomeIcon icon={faCartShopping} className="size-5"/>  Shopping
                     </Link>
                 </button>
-                <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">     
+                <button className="p-2  text-white hover:text-yellow-300 transition duration-300 cursor-pointer">  
+                    <Link to="/Login">   
                     <FontAwesomeIcon icon={faUser} className="size-5"/>  Usuario
+                    </Link>
                 </button>
 
                  <button className="md:hidden p-2 text-white hover:text-yellow-300 transition duration-300 cursor-pointer"
