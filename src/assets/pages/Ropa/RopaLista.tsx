@@ -7,6 +7,7 @@ import { faBagShopping, faEye } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom"
 import { CONFIG } from "../../../config"
 
+
 const RopaLista = () => {
      const { Ropas, cargando, error, tieneDatos1
         } = useRopa()
@@ -34,11 +35,11 @@ const RopaLista = () => {
     )
 
  const CategoriasUnicasRopa: string[] =[];
- Ropas.forEach(p => {
+    Ropas.forEach(p => {
     if (!CategoriasUnicasRopa.includes(p.Categoria)){
         CategoriasUnicasRopa.push(p.Categoria);
-    }
- })
+        }
+    })
 
   return (
     <div className="flex flex-col md:flex-row gap-10">
@@ -73,9 +74,10 @@ const RopaLista = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {Ropas .filter( item => item.Categoria === CategoriaSeleccionada).map(({idRopas, nombre, imagen, descripcion, precio, Stock, tallas}) => (
                             <div key={idRopas} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2 relative group">
-                                <Link to="/productodetalle">
+                                <Link to={`/Ropadetalle/${idRopas}`}>
                                 <img src={`${CONFIG.API_URL}/img/${imagen}`} alt="/" className="w-full h-72 object-cover"/>
-                                 <div className="absolute bg-black/10 flex items-center justify-center inset-0 gap-3  group-hover:opacity-100  opacity-0 transition-opacity duration-300 z-20 ">
+                                </Link>
+                                 <div className="absolute bg-black/10  pointer-events-none    flex items-center justify-center inset-0 gap-3  group-hover:opacity-100  opacity-0 transition-opacity duration-300 z-20 ">
                                     {[
                                         { icon: faEye, label: 'Vista rapida', delay:'' },
                                         { icon: faBagShopping, label: 'Añadir al carrito', delay:'delay-75' },
@@ -83,7 +85,7 @@ const RopaLista = () => {
                                         <button key={idx}
                                             type="button"
                                             title={btn.label}
-                                            className={`flex items-center cursor-pointer justify-center w-10 h-10 rounded-full bg-white text-[#6F755C]  hover:bg-[#6F755C] 
+                                            className={`flex items-center pointer-events-auto cursor-pointer justify-center w-10 h-10 rounded-full bg-white text-[#6F755C]  hover:bg-[#6F755C] 
                                              hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 shadow-lg focus:ring-2 focus:ring-[#6F755C]  ${btn.delay}`}>
                                             <FontAwesomeIcon icon={btn.icon}/>
 
@@ -91,9 +93,6 @@ const RopaLista = () => {
                                      ))}
 
                                 </div>
-                                </Link>
-
-
                                 <div className="p-5">
                                     <h3 className="font-bold text-lg line-clamp-1">{nombre}</h3>
                                     <p className="text-gray-500 text-sm mt-3 line-clamp-3"> {descripcion}</p>
