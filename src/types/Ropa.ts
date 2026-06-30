@@ -1,4 +1,4 @@
-export interface Ropa {
+export interface ropa_lunora {
     idRopas : number;
     nombre: string;
     descripcion: string;
@@ -10,7 +10,7 @@ export interface Ropa {
     pais: string;
     valoracion: number;
     tallas: string;
-    descripcion_Profunda: string;
+    descripcion_profunda: string;
     vendidos: string;
     codigo_ropa: string;
     personas_viendo: number;

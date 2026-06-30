@@ -86,7 +86,7 @@ const vinculacion = createBrowserRouter([
       )
     },
     {
-      path: "productodetalle",
+      path: "Ropadetalle/:idRopas",
         lazy: async () => ({ Component: (await import('./assets/pages/RopaDetalle/index.tsx')).default}
       )
     },
@@ -94,7 +94,23 @@ const vinculacion = createBrowserRouter([
       path: "detalletendencia/:idtendenciayC",
         lazy: async () => ({ Component: (await import('./assets/pages/productoDetalles/indexTendencia.tsx')).default}
       )
-    }
+    },
+        {
+      path: "Empleado",
+        lazy: async () => ({ Component: (await import('./assets/pages/Empleado/Empleadotabla.tsx')).default}
+      )
+    },
+     {
+      path: "Login",
+        lazy: async () => ({ Component: (await import('./assets/pages/Login/Login.tsx')).default}
+      )
+    },
+     {
+      path: "perfil",
+        lazy: async () => ({ Component: (await import('./assets/pages/Login/perfil.tsx')).default}
+      )
+    },
+    
     ]
   }
 ])

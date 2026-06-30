@@ -3,10 +3,10 @@ import { fectRopa } from "../../services/Ropa_services"
 
 
 
-export const useRopa = () => {
+export const useRopa = ( Categoria?:| string ) => {
     const { data, isLoading, error } = useQuery ({
-            queryKey: ['Ropas'],
-            queryFn: ({ signal }) => fectRopa(signal)
+            queryKey: ['Ropa', Categoria],
+            queryFn: ({ signal }) => fectRopa(Categoria, signal)
     })
 
     return{

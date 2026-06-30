@@ -91,7 +91,6 @@ const tendenciayCLista = () => {
                                         <button key={idx}
                                             type="button"
                                             title={btn.label}
-                                            onClick={() => AgregarCarrito(idtendenciayC , nombre, precio, tallas, 1)}
                                             className={`flex items-center  pointer-events-auto           cursor-pointer justify-center w-10 h-10 rounded-full bg-white text-[#6F755C] hover:bg-[#6F755C] 
                                              hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 shadow-lg focus:ring-2 focus:ring-[#6F755C]  ${btn.delay}`}>
                                             <FontAwesomeIcon icon={btn.icon}/>

@@ -3,14 +3,17 @@ import {useTendenciaDetalle} from "./useTendeciaDetalle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGlobe, faMoneyBill, faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { useState } from "react";
 
 
 
 import { CONFIG } from "../../../config";
+import { AgregarCarrito } from "../../utils/Functions";
 
 const DetalleTendencia = () => {
     const { idtendenciayC } = useParams<{ idtendenciayC: string }>()
     const { tendencia, cargando, error, tieneDatos  } = useTendenciaDetalle(idtendenciayC)
+    const [tallaSeleccionadaTendencia, setTallaseleccionadaTendencia] = useState("")
 const reviews = { href: '#', average: 4, totalCount: 117 }
 function classNames(...classes: string[] ) {
   return classes.filter(Boolean).join(' ')
@@ -76,7 +79,7 @@ function classNames(...classes: string[] ) {
               <div className="grid grid-cols-4 gap-3 mt-4">
                 {tendencia.tallas.split(',').map((talla) => (
                     <label key={talla} className="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-checked:border-[#858B6F] has-checked:bg-[#858B6F] has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-[#858B6F] has-disabled:border-gray-400 has-disabled:bg-gray-200 has-disabled:opacity-25 ">
-                      <input type="radio" name="size " className="opacity-0 absolute inset-0  appearance-none focus:outline-none disabled:cursor-not-allowed "/>
+                      <input type="radio" name="size "  value={talla}  onChange={(e) => setTallaseleccionadaTendencia(e.target.value)}   className="opacity-0 absolute inset-0  appearance-none focus:outline-none disabled:cursor-not-allowed "/>
                       <span className="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white"> {talla}</span>
                     </label>
                 ))}
@@ -118,6 +121,14 @@ function classNames(...classes: string[] ) {
             <form className="mt-10">
               <button
                 type="submit"
+                onClick={() => {if (!tallaSeleccionadaTendencia){
+                  alert("Selecciona la talle por favor")
+                  return
+                }
+                AgregarCarrito(tendencia.idtendenciayC, tendencia.nombre, tendencia.precio, tallaSeleccionadaTendencia, 1 )
+                alert("Listo agregdo exitosamente")
+
+              }}
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-[#858B6F] px-8 py-3 text-base font-medium text-white hover:bg-[#858B6F] focus:ring-2 focus:ring-[#858B6F] focus:ring-offset-2 focus:outline-hidden"> Agregar Carrito 
               </button>
             </form>

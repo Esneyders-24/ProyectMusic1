@@ -5,6 +5,8 @@ export const CONFIG = {
     ENDPOINTS:{
         TENDENCIASYCOLECCIONES: '/tendencias_colecciones.php',
         ROPA:'/Ropas.php',  
+        EMPLEADO: '/Empleado.php',
+        CLIENTES: '/cliente.php',
     },
 
     version: '1.0.0'
