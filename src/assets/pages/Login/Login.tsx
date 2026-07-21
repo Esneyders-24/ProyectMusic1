@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { loginUsuario } from "../../services/cliente";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../Context/AuthContext"
+import Fondo from "../../img/Fonlog.png"
 
 
-const Loginpanel1 =() => {
-       const navigate = useNavigate();
+const Loginpanel1 = () => {
+    const navigate = useNavigate();
 
     const [correotelefono, setCorreoTelefono] = useState("");
     const [clave, setClave] = useState("");
+    const { login } = useAuth();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
@@ -19,7 +22,12 @@ const Loginpanel1 =() => {
 
             if (respuesta.success) {
 
-                localStorage.setItem("idCliente", String(respuesta.id));
+               login({
+                    id: respuesta.id!,
+                    nombre: respuesta.nombre!,
+                    correo: respuesta.correo!,
+                    telefono: respuesta.telefono!
+                });
 
                 navigate("/perfil");
 
@@ -39,6 +47,7 @@ const Loginpanel1 =() => {
     };
 
     return (
+
 
         <div className="max-w-7xl mx-auto px-3 py-20">
 
@@ -78,6 +87,7 @@ const Loginpanel1 =() => {
 
         </div>
         
+
     );
 
 }
