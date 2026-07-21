@@ -6,6 +6,8 @@ import {ReactQueryDevtools} from '@tanstack/react-query-devtools'
 
 import './index.css'
 import App from './App.tsx'
+import { AuthProvider } from './Context/AuthContext.tsx'
+import ProtectedRoute from './assets/Components/ProtectedRoute.tsx'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,6 +44,13 @@ const vinculacion = createBrowserRouter([
         lazy: async () => ({ Component: (await import('./assets/pages/Zapatos.tsx')).default}
       )
     },
+
+        {
+        path: "marca",
+        lazy: async () => ({ Component: (await import('./assets/pages/marcas/index.tsx')).default}
+      )
+    },
+
     {
         path: "Accesorios",
         lazy: async () => ({ Component: (await import('./assets/pages/Accesorios.tsx')).default}
@@ -95,16 +104,29 @@ const vinculacion = createBrowserRouter([
         lazy: async () => ({ Component: (await import('./assets/pages/productoDetalles/indexTendencia.tsx')).default}
       )
     },
-        {
-      path: "Empleado",
-        lazy: async () => ({ Component: (await import('./assets/pages/Empleado/Empleadotabla.tsx')).default}
-      )
-    },
+       
      {
       path: "Login",
         lazy: async () => ({ Component: (await import('./assets/pages/Login/Login.tsx')).default}
       )
     },
+
+    {
+      path: "mapa",
+      lazy : async () => ({ Component: (await import('./assets/pages/mapa/index.tsx')).default})
+    },
+
+    {
+       element:<ProtectedRoute/>,
+        children: [
+             {
+      path: "Empleado",
+        lazy: async () => ({ Component: (await import('./assets/pages/Empleado/Empleadotabla.tsx')).default}
+      )
+    }
+        ]
+    },
+    
      {
       path: "perfil",
         lazy: async () => ({ Component: (await import('./assets/pages/Login/perfil.tsx')).default}
@@ -119,8 +141,10 @@ const vinculacion = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
+    <AuthProvider>
     <RouterProvider router = {vinculacion} />
     <ReactQueryDevtools initialIsOpen= {false}/>
+    </AuthProvider>
     </QueryClientProvider>
   </StrictMode>,
 )
