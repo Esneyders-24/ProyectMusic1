@@ -7,6 +7,10 @@ export const CONFIG = {
         ROPA:'/Ropas.php',  
         EMPLEADO: '/Empleado.php',
         CLIENTES: '/cliente.php',
+        EMPLEADO_INSERT: '/Empleadoinsert.php',
+        EMPLEADO_UPDATE: '/Empleadoupdate.php',
+        EMPLEADO_DELETE: '/EmpleadoDelete.php',
+        MARCAS: '/marcas.php',
     },
 
     version: '1.0.0'
